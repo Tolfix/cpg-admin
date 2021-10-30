@@ -1,4 +1,3 @@
-import "./index.css";
 import { Admin, fetchUtils, ListGuesser, Resource } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import Dashboard from "./components/Dashboard";
