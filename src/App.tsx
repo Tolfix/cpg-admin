@@ -22,7 +22,7 @@ const fetchJson = (url: string, options: any = {}) => {
   return fetchUtils.fetchJson(url, options);
 }
 
-const dataProvider = jsonServerProvider('http://localhost:8080/v2', fetchJson);
+const dataProvider = jsonServerProvider(process.env.REACT_APP_CPG_DOMAIN, fetchJson);
 
 function App() {
   return (
