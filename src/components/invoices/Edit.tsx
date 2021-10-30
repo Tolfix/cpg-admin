@@ -45,7 +45,7 @@ export const EditInvoices = (props: any) =>
                     { id: "manual", name: "manual" },
                     { id: "paypal", name: "paypal" },
                     { id: "credit_card", name: "payment_pending" },
-                    { id: "swish", name: "active" },
+                    { id: "swish", name: "swish" },
                 ]} />
 
                 <NumberInput required={true} label="Amount" source="amount" />
