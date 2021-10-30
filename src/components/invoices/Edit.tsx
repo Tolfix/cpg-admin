@@ -69,7 +69,7 @@ export const EditInvoices = (props: any) =>
                     <SimpleFormIterator>
                         <RichTextInput source="notes" />
                         <NumberInput required={true} label="Amount" source="amount" />
-                        <BooleanInput label="Taxed" defaultValue={false} source="taxed" />
+                        <NumberInput label="Quantity" defaultValue={1} source="quantity" />
                     </SimpleFormIterator>
                 </ArrayInput>
                 
