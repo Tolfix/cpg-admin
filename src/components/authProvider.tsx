@@ -1,6 +1,6 @@
 export default {
     login: ({ username, password }: { username:any, password:any }) => {
-        const request = new Request('http://localhost:8080/v1/admin/auth', {
+        const request = new Request(`${process.env.REACT_APP_CPG_DOMAIN}/v1/admin/auth`, {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json',
             "Authorization": `Basic ${username}:${password}`
