@@ -1,5 +1,4 @@
-import { Admin, fetchUtils, ListGuesser, Resource } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
+import { Admin, ListGuesser, Resource } from 'react-admin';
 import Dashboard from "./components/Dashboard";
 import authProvider from "./components/authProvider";
 import { CustomerList } from "./components/customers/Field";
@@ -11,16 +10,7 @@ import { InvoicesList } from "./components/invoices/List";
 import { EditInvoices } from "./components/invoices/Edit";
 import { CreateTransactions } from "./components/transactions/Create";
 import { ListTransactions } from "./components/transactions/List";
-
-const fetchJson = (url: string, options: any = {}) => {
-  if (!options.headers) {
-      options.headers = new Headers({ Accept: 'application/json' });
-  }
-  options.headers.set('Authorization', `Bearer ${JSON.parse(localStorage.getItem("auth") ?? "{}").token}`);
-  return fetchUtils.fetchJson(url, options);
-}
-
-const dataProvider = jsonServerProvider(process.env.REACT_APP_CPG_DOMAIN, fetchJson);
+import dataProvider from './components/dataProvider';
 
 function App() {
   return (
