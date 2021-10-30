@@ -16,7 +16,6 @@ const fetchJson = (url: string, options: any = {}) => {
   if (!options.headers) {
       options.headers = new Headers({ Accept: 'application/json' });
   }
-  // add your own headers here
   options.headers.set('Authorization', `Bearer ${JSON.parse(localStorage.getItem("auth") ?? "{}").token}`);
   return fetchUtils.fetchJson(url, options);
 }
