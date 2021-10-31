@@ -1,12 +1,17 @@
 import * as React from "react";
-import { List, Datagrid, TextField, SingleFieldList, ChipField, BooleanField, ReferenceField, EditButton, ReferenceArrayField } from 'react-admin';
+import { List, Datagrid, TextField, SingleFieldList, ChipField, BooleanField, ReferenceField, EditButton, ReferenceArrayField, FunctionField } from 'react-admin';
 
 export const InvoicesList = (props: any) => (
     <List {...props}>
         <Datagrid>
             <TextField label="Id" source="id" />
             <ReferenceField label="Customer" source="customer_uid" reference="customers">
-                <TextField source="personal.first_name" />
+                <FunctionField 
+                    // @ts-ignore
+                    render={(record) => 
+                    `${record.personal.first_name} ${record.personal.last_name}`} 
+                    source="personal.first_name"
+                />
             </ReferenceField>
             <TextField label="Due Date" source="dates.due_date" />
             <TextField label="Amount" source="amount" />

@@ -43,8 +43,9 @@ export const EditInvoices = (props: any) =>
                 <SelectInput required={true} source="payment_method" choices={[
                     { id: "none", name: "none" },
                     { id: "manual", name: "manual" },
+                    { id: "bank", name: "bank" },
                     { id: "paypal", name: "paypal" },
-                    { id: "credit_card", name: "payment_pending" },
+                    { id: "credit_card", name: "credit_card" },
                     { id: "swish", name: "swish" },
                 ]} />
 
