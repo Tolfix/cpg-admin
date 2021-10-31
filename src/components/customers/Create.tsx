@@ -1,4 +1,4 @@
-import { Create, FormTab, TabbedForm, TextInput } from "react-admin";
+import { Create, FormTab, PasswordInput, TabbedForm, TextInput } from "react-admin";
 
 export const CreateCustomer = (props: any) =>
 (
@@ -8,6 +8,7 @@ export const CreateCustomer = (props: any) =>
                 <TextInput label="First name" required={true} source="personal.first_name" />
                 <TextInput label="Last name" required={true} source="personal.last_name" />
                 <TextInput label="Email" required={true} source="personal.email" />
+                <PasswordInput label="Password" required={true} source="password" />
                 <TextInput label="Phone number" required={true} source="personal.phone" />
             </FormTab>
             <FormTab label="Billing">
