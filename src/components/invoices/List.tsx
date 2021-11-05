@@ -1,4 +1,5 @@
 import * as React from "react";
+import { PDFButton } from "./PDFButton";
 import { List, Datagrid, TextField, SingleFieldList, ChipField, BooleanField, ReferenceField, EditButton, ReferenceArrayField, FunctionField } from 'react-admin';
 
 export const InvoicesList = (props: any) => (
@@ -39,6 +40,9 @@ export const InvoicesList = (props: any) => (
                 </SingleFieldList>
             </ReferenceArrayField>
             <EditButton />
+            {/* @ts-ignore */}
+            <PDFButton />
+            {/* <EditButton redirect={""} /> */}
         </Datagrid>
     </List>
 );

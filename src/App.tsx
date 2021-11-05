@@ -16,6 +16,8 @@ import { CreateCategory } from './components/categories/Create';
 import { ListProducts } from './components/products/List';
 import { EditProducts } from './components/products/Edit';
 import { CreateOrders } from './components/orders/Create';
+import { OrderList } from './components/orders/List';
+import { EditOrders } from './components/orders/Edit';
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
         <Resource name="customers" list={CustomerList} create={CreateCustomer} edit={EditCustomer} />
         <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
         <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
-        <Resource name="orders" list={ListGuesser} create={CreateOrders} />
+        <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
         <Resource name="transactions" list={ListTransactions} create={CreateTransactions} />
     </Admin>
     
