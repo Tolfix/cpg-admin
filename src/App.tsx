@@ -18,6 +18,7 @@ import { EditProducts } from './components/products/Edit';
 import { CreateOrders } from './components/orders/Create';
 import { OrderList } from './components/orders/List';
 import { EditOrders } from './components/orders/Edit';
+import { EditTrans } from './components/transactions/Edit';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
         <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
         <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
-        <Resource name="transactions" list={ListTransactions} create={CreateTransactions} />
+        <Resource name="transactions" list={ListTransactions} create={CreateTransactions} edit={EditTrans} />
     </Admin>
     
     </>

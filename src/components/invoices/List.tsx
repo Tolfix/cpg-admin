@@ -36,7 +36,7 @@ export const InvoicesList = (props: any) => (
                 source="transactions"
             >
                 <SingleFieldList>
-                    <ChipField source="uid" />
+                    <ChipField source="id" />
                 </SingleFieldList>
             </ReferenceArrayField>
             <EditButton />

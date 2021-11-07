@@ -1,11 +1,11 @@
-import { Create, DateInput, FormTab, NumberInput, ReferenceArrayInput, SelectArrayInput, SelectInput, TabbedForm, TextInput } from "react-admin";
+import { Create, DateInput, Edit, FormTab, NumberInput, ReferenceArrayInput, ReferenceInput, SelectArrayInput, SelectInput, TabbedForm, TextInput } from "react-admin";
 
-export const CreateTransactions = (props: any) =>
+export const EditTrans = (props: any) =>
 (
-    <Create {...props}>
+    <Edit {...props}>
         <TabbedForm>
             <FormTab label="Info">
-                <ReferenceArrayInput source="customer_uid" reference="customers">
+                <ReferenceInput source="customer_uid" reference="customers">
                         <SelectInput
                             source="customers"
                             label="Customers"
@@ -15,10 +15,13 @@ export const CreateTransactions = (props: any) =>
                                 (record: { personal: {first_name: any; last_name: any;} }) => 
                                 `${record.personal.first_name} ${record.personal.last_name}`}
                         />
-                </ReferenceArrayInput>
-                <ReferenceArrayInput source="invoice_uid" reference="invoices">
-                    <SelectArrayInput optionText={(record) => record.id.toString()} />
-                </ReferenceArrayInput>
+                </ReferenceInput>
+                <ReferenceInput source="invoice_uid" reference="invoices">
+                    <SelectInput 
+                        source="invoice_uid"
+                        label="Invoices"
+                        optionText={(record) => record.id.toString()}/>
+                </ReferenceInput>
                 <NumberInput required={true} label="Amount" source="amount" />
                 <NumberInput required={true} label="Fees" source="fees" />
                 <DateInput label="Payed at" source="date" defaultValue={new Date()} />
@@ -32,5 +35,5 @@ export const CreateTransactions = (props: any) =>
                 ]} />
             </FormTab>
         </TabbedForm>
-    </Create>
+    </Edit>
 );
