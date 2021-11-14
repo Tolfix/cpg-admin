@@ -18,7 +18,9 @@ export const PDFButton = (props: any) => {
         const url = process.env.REACT_APP_CPG_DOMAIN + '/v2/invoices/' + record.id + '/pdf';
         fetch(url, {
             headers: {
-                'Authorization': 'Bearer ' + `${JSON.parse(localStorage.getItem("auth") ?? "{}").token}`
+                'Authorization': 'Bearer ' + `${JSON.parse(localStorage.getItem("auth") ?? "{}").token}`,
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
             }
         })      .then(response => response.blob())
         .then(blob => {
