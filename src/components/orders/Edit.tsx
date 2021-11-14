@@ -26,7 +26,7 @@ export const EditOrders = (props: any) =>
                         />
                 </ReferenceInput>
                 <ReferenceInput source="product_uid" reference="products">
-                    <SelectInput
+                    <SelectArrayInput
                         source="products"
                         label="Products"
                         required={true}

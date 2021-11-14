@@ -13,13 +13,22 @@ export const OrderList = (props: any) => (
                     source="personal.first_name"
                 />
             </ReferenceField>
-            <ReferenceField label="Product" source="product_uid" reference="products">
+            <ReferenceArrayField
+                label="Product"
+                reference="products"
+                source="products_uid"
+            >
+                <SingleFieldList>
+                    <ChipField source="id" />
+                </SingleFieldList>
+            </ReferenceArrayField>
+            {/* <ReferenceField label="Product" source="product_uid" reference="products">
                 <FunctionField 
                     // @ts-ignore
                     render={(record) => 
                     `${record.name}`} 
                 />
-            </ReferenceField>
+            </ReferenceField> */}
             <TextField label="Method" source="payment_method" />
             <TextField label="Status" source="order_status" />
             <TextField label="Billing Type" source="billing_type" />
