@@ -19,13 +19,15 @@ import { CreateOrders } from './components/orders/Create';
 import { OrderList } from './components/orders/List';
 import { EditOrders } from './components/orders/Edit';
 import { EditTrans } from './components/transactions/Edit';
+import { ListCategory } from './components/categories/List';
+import { EditCategory } from './components/categories/Edit';
 
 function App() {
   return (
     <>
     
     <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
-        <Resource name="categories" list={ListGuesser} create={CreateCategory} />
+        <Resource name="categories" list={ListCategory} create={CreateCategory} edit={EditCategory} />
         <Resource name="customers" list={CustomerList} create={CreateCustomer} edit={EditCustomer} />
         <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
         <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
