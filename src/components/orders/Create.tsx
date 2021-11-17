@@ -25,15 +25,21 @@ export const CreateOrders = (props: any) =>
                                 `${record.personal.first_name} ${record.personal.last_name}`}
                         />
                 </ReferenceArrayInput>
-                <ReferenceArrayInput source="product_uid" reference="products">
-                    <SelectArrayInput
-                        source="products"
-                        label="Products"
-                        required={true}
-                        allowEmpty={false}
-                        optionText="name"
-                    />
-                </ReferenceArrayInput>
+                <ArrayInput source="products">
+                    <SimpleFormIterator>
+                            <ReferenceArrayInput source="product_id" reference="products">
+                                <SelectInput
+                                    source="products"
+                                    label="Products"
+                                    required={true}
+                                    allowEmpty={false}
+                                    optionText="name"
+                                />
+                        </ReferenceArrayInput>
+                        <NumberInput label="Quantity" defaultValue={1} source="quantity" />
+                    </SimpleFormIterator>
+                </ArrayInput>
+                
                 <SelectInput required={true} source="order_status" choices={[
                     { id: "active", name: "active" },
                     { id: "pending", name: "pending" },
