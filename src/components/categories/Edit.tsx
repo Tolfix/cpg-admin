@@ -6,7 +6,7 @@ export const EditCategory = (props: any) =>
     <Edit {...props}>
         <TabbedForm>
             <FormTab label="General">
-                    <TextInput required={true} label="Name" source="name" />
+                <TextInput required={true} label="Name" source="name" />
                 <RichTextInput required={true} label="Description" source="description"  />
                 <BooleanInput defaultValue={false} label="Private" source="private" />
             </FormTab>

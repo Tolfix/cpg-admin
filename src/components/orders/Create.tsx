@@ -49,7 +49,6 @@ export const CreateOrders = (props: any) =>
                 <NumberInput min={0} required={false} label="Price override" source="price_override" />
             </FormTab>
             <FormTab label="Payments">
-                <NumberInput min={0} required={true} defaultValue={1} label="Quantity" source="quantity" />
                 <SelectInput required={true} source="payment_method" choices={[
                     { id: "none", name: "none" },
                     { id: "manual", name: "manual" },

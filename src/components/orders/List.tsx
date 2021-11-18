@@ -16,10 +16,10 @@ export const OrderList = (props: any) => (
             <ReferenceArrayField
                 label="Product"
                 reference="products"
-                source="products_uid"
+                source="products"
             >
                 <SingleFieldList>
-                    <ChipField source="id" />
+                    <ChipField source="product_id" />
                 </SingleFieldList>
             </ReferenceArrayField>
             {/* <ReferenceField label="Product" source="product_uid" reference="products">

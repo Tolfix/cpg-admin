@@ -26,7 +26,7 @@ export const CreateProducts = (props: any) =>
                     />
                 </ReferenceArrayInput>
                 <TextInput required={true} label="Name" source="name" />
-                <TextInput required={true} label="Description" source="description" />
+                <RichTextInput required={true} label="Description" source="description" />
                 <BooleanInput label="Hidden" defaultValue={false} source="hidden" />
                 <BooleanInput label="Special" defaultValue={false} source="special" />
             </FormTab>
