@@ -50,11 +50,6 @@ export const EditProducts = (props: any) =>
                     { id: "triennially", name: "triennially" },
                 ]} />
             </FormTab>
-            <FormTab label="Miscellaneous">
-
-
-
-            </FormTab>
         </TabbedForm>
     </Edit>
 );

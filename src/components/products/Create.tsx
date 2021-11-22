@@ -38,6 +38,18 @@ export const CreateProducts = (props: any) =>
                 <NumberInput min={0} required={true} label="Price" source="price" />
                 <NumberInput min={0} required={true} defaultValue={0} label="Setup fee" source="setup_fee" />
                 <NumberInput min={0} max={100} required={true} defaultValue={0} label="Tax Rate" source="tax_rate" />
+                <SelectInput required={true} source="payment_type" choices={[
+                    { id: "free", name: "free" },
+                    { id: "one_time", name: "one_time" },
+                    { id: "recurring", name: "recurring" },
+                ]} />
+                <SelectInput required={false} source="recurring_method" choices={[
+                    { id: "monthly", name: "monthly" },
+                    { id: "quarterly", name: "quarterly" },
+                    { id: "semi_annually", name: "semi_annually" },
+                    { id: "biennially", name: "biennially" },
+                    { id: "triennially", name: "triennially" },
+                ]} />
             </FormTab>
             {/* <FormTab label="Miscellaneous">
 
