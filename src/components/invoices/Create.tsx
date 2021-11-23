@@ -50,8 +50,8 @@ export const CreateInvoices = (props: any) =>
                 <BooleanInput label="Notified" defaultValue={false} source="notified" />
             </FormTab>
             <FormTab label="Dates">
-                <DateInput label="Invoiced date" source="dates.invoice_date" defaultValue={new Date()} />
-                <DateInput label="Due date" source="dates.due_date" defaultValue={new Date()} />
+                <DateInput label="Invoiced date" source="dates.invoice_date" defaultValue={new Date().toLocaleDateString()} />
+                <DateInput label="Due date" source="dates.due_date" defaultValue={new Date().toLocaleDateString()} />
             </FormTab>
             <FormTab label="Miscellaneous">
                 

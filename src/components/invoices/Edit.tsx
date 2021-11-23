@@ -57,8 +57,8 @@ export const EditInvoices = (props: any) =>
 
             <FormTab label="Dates">
 
-                <DateInput label="Invoiced date" source="dates.invoice_date" defaultValue={new Date()} />
-                <DateInput label="Due date" source="dates.due_date" defaultValue={new Date()} />
+                <DateInput label="Invoiced date" source="dates.invoice_date" defaultValue={new Date().toLocaleDateString()} />
+                <DateInput label="Due date" source="dates.due_date" defaultValue={new Date().toLocaleDateString()} />
 
             </FormTab>
 
