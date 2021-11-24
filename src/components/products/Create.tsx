@@ -1,9 +1,9 @@
 import { 
     ArrayInput,
     BooleanInput,
-    Create, DateInput, FormTab,
+    Create, FormTab,
     NumberInput,
-    ReferenceArrayInput, SelectArrayInput, SelectInput,
+    ReferenceArrayInput, SelectInput,
     SimpleFormIterator,
     TabbedForm,
     TextInput,
@@ -51,11 +51,18 @@ export const CreateProducts = (props: any) =>
                     { id: "triennially", name: "triennially" },
                 ]} />
             </FormTab>
-            {/* <FormTab label="Miscellaneous">
+            <FormTab label="Modules">
 
+                <TextInput required={false} label="Module Name" source="module_name" />
 
+                <ArrayInput source="modules">
+                    <SimpleFormIterator>
+                        <TextInput source="name" />
+                        <TextInput source="value" />
+                    </SimpleFormIterator>
+                </ArrayInput>
 
-            </FormTab> */}
+            </FormTab>
         </TabbedForm>
     </Create>
 );
