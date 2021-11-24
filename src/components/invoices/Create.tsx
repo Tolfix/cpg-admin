@@ -62,6 +62,15 @@ export const CreateInvoices = (props: any) =>
                         <RichTextInput source="notes" />
                         <NumberInput required={true} label="Amount" source="amount" />
                         <NumberInput label="Quantity" defaultValue={1} source="quantity" />
+                        <ReferenceArrayInput source="product_id" reference="products">
+                            <SelectInput
+                                source="product"
+                                label="Product"
+                                required={true}
+                                allowEmpty={false}
+                                optionText={"name"}
+                            />
+                        </ReferenceArrayInput>
                     </SimpleFormIterator>
                 </ArrayInput>
 
