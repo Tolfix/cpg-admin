@@ -33,8 +33,6 @@ export const CreateInvoices = (props: any) =>
                     { id: "payment_pending", name: "payment_pending" },
                     { id: "active", name: "active" },
                     { id: "pending", name: "pending" },
-                    { id: "fruad", name: "fruad" },
-                    { id: "cancelled", name: "cancelled" },
                 ]} />
                 <SelectInput required={true} source="payment_method" choices={[
                     { id: "none", name: "none" },
