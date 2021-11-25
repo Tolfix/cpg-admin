@@ -36,7 +36,7 @@ export const EditInvoices = (props: any) =>
                     { id: "payment_pending", name: "payment_pending" },
                     { id: "active", name: "active" },
                     { id: "pending", name: "pending" },
-                    { id: "fruad", name: "fruad" },
+                    { id: "fraud", name: "fruad" },
                     { id: "cancelled", name: "cancelled" },
                 ]} />
 
