@@ -47,6 +47,7 @@ export const CreateProducts = (props: any) =>
                     { id: "monthly", name: "monthly" },
                     { id: "quarterly", name: "quarterly" },
                     { id: "semi_annually", name: "semi_annually" },
+                    { id: "yearly", name: "yearly" },
                     { id: "biennially", name: "biennially" },
                     { id: "triennially", name: "triennially" },
                 ]} />
