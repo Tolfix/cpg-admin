@@ -1,8 +1,11 @@
 import * as React from "react";
-import { List, Datagrid, TextField, BooleanField, ReferenceField, EditButton, NumberField } from 'react-admin';
+import { List, Pagination, Datagrid, TextField, BooleanField, ReferenceField, EditButton, NumberField } from 'react-admin';
+
+const PostPagination = props => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
+
 
 export const ListProducts = (props: any) => (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
         <Datagrid>
             <TextField label="Id" source="id" />
             <TextField label="Name" source="name" />
