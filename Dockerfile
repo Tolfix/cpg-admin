@@ -2,7 +2,7 @@ FROM node:14-alpine AS builder
 WORKDIR /app
 COPY package.json ./
 ARG URI
-ENV REACT_APP_CPG_DOMAIN=$URI
+ENV REACT_APP_CPG_DOMAIN $URI
 COPY . .
 RUN npm install && npm run build
 
