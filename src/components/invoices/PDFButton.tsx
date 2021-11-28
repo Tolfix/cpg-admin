@@ -1,5 +1,3 @@
-import {Domain} from "../../config.json"
-
 export const PDFButton = (props: any) => {
     const {
         basePath = '',
@@ -12,7 +10,7 @@ export const PDFButton = (props: any) => {
 
     function downloadPDF()
     {
-        const url = Domain + '/v2/invoices/' + record.id + '/pdf';
+        const url = process.env.REACT_APP_CPG_DOMAIN + '/v2/invoices/' + record.id + '/pdf';
         fetch(url, {
             headers: {
                 'Authorization': 'Bearer ' + `${JSON.parse(localStorage.getItem("auth") ?? "{}").token}`,

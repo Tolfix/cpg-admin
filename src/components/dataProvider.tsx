@@ -1,7 +1,5 @@
 import jsonServerProvider from 'ra-data-json-server';
 import { fetchUtils } from 'react-admin';
-import {Domain} from "../config.json"
-
 
 const fetchJson = (url: string, options: any = {}) => {
     if (!options.headers) {
@@ -11,5 +9,5 @@ const fetchJson = (url: string, options: any = {}) => {
     return fetchUtils.fetchJson(url, options);
 }
 
-const dataProvider = jsonServerProvider(`${Domain}/v2`, fetchJson);
+const dataProvider = jsonServerProvider(`${process.env.REACT_APP_CPG_DOMAIN}/v2`, fetchJson);
 export default dataProvider;
