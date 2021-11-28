@@ -1,5 +1,4 @@
-import RichTextInput from "ra-input-rich-text";
-import { BooleanField, BooleanInput, Create, Datagrid, DateInput, Edit, EditButton, FormTab, List, NumberInput, RichTextField, SelectInput, TabbedForm, TextField, TextInput } from "react-admin";
+import { BooleanField, Datagrid, EditButton, List, RichTextField, TextField, } from "react-admin";
 
 export const ListCategory = (props: any) =>
 (

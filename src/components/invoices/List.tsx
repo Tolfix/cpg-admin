@@ -1,4 +1,3 @@
-import * as React from "react";
 import { PDFButton } from "./PDFButton";
 import { List, Datagrid, TextField, SingleFieldList, ChipField, BooleanField, ReferenceField, EditButton, ReferenceArrayField, FunctionField } from 'react-admin';
 

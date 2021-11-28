@@ -1,5 +1,5 @@
 import RichTextInput from "ra-input-rich-text";
-import { BooleanInput, Create, DateInput, FormTab, NumberInput, SelectInput, TabbedForm, TextInput } from "react-admin";
+import { BooleanInput, Create, FormTab, TabbedForm, TextInput } from "react-admin";
 
 export const CreateCategory = (props: any) =>
 (

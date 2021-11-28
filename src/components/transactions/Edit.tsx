@@ -1,4 +1,4 @@
-import { Create, DateInput, Edit, FormTab, NumberInput, ReferenceArrayInput, ReferenceInput, SelectArrayInput, SelectInput, TabbedForm, TextInput } from "react-admin";
+import { DateInput, Edit, FormTab, NumberInput, ReferenceInput, SelectInput, TabbedForm } from "react-admin";
 
 export const EditTrans = (props: any) =>
 (

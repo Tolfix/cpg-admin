@@ -1,4 +1,3 @@
-import * as React from "react";
 import { List, Datagrid, TextField, EditButton } from 'react-admin';
 
 export const CustomerList = (props: any) => (
