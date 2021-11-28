@@ -25,16 +25,14 @@ import { EditCategory } from './components/categories/Edit';
 function App() {
   return (
     <>
-    
-    <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
-        <Resource name="categories" list={ListCategory} create={CreateCategory} edit={EditCategory} />
-        <Resource name="customers" list={CustomerList} create={CreateCustomer} edit={EditCustomer} />
-        <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
-        <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
-        <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
-        <Resource name="transactions" list={ListTransactions} create={CreateTransactions} edit={EditTrans} />
-    </Admin>
-    
+      <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
+          <Resource name="categories" list={ListCategory} create={CreateCategory} edit={EditCategory} />
+          <Resource name="customers" list={CustomerList} create={CreateCustomer} edit={EditCustomer} />
+          <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
+          <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
+          <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
+          <Resource name="transactions" list={ListTransactions} create={CreateTransactions} edit={EditTrans} />
+      </Admin>
     </>
   );
 }
