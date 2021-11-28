@@ -1,11 +1,7 @@
-FROM node:14-alpine AS builder
+FROM node:14-alpine
 WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
-ARG URI
-ENV REACT_APP_CPG_DOMAIN $URI
-COPY . .
-RUN npm install && npm run build
-
-FROM nginx:1.19-alpine AS server
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder ./app/build /usr/share/nginx/html
+RUN npm i
+COPY . ./
+CMD ["npm", "start"]
