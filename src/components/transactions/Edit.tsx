@@ -24,7 +24,7 @@ export const EditTrans = (props: any) =>
                 </ReferenceInput>
                 <NumberInput required={true} label="Amount" source="amount" />
                 <NumberInput required={true} label="Fees" source="fees" />
-                <DateInput label="Payed at" source="date" defaultValue={new Date()} />
+                <DateInput label="Payed at" source="date" defaultValue={new Date().toLocaleDateString()} />
                 <SelectInput required={true} source="payment_method" choices={[
                     { id: "none", name: "none" },
                     { id: "manual", name: "manual" },
