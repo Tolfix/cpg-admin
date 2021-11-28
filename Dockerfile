@@ -10,13 +10,7 @@ COPY . .
 RUN jq 'to_entries | map_values({ (.key) : ("$" + .key) }) | reduce .[] as $item ({}; . + $item)' ./src/config.json > ./src/config.tmp.json && mv ./src/config.tmp.json ./src/config.json
 RUN npm install && npm run build
 
-FROM nginx:1.17
-
+FROM nginx:1.19-alpine AS server
 ENV JSFOLDER=/usr/share/nginx/html/static/js/*.js
-
-COPY ./start-nginx.sh /usr/bin/start-nginx.sh
-RUN chmod +x /usr/bin/start-nginx.sh
-WORKDIR /usr/share/nginx/html
-
-COPY --from=0 /app/build .
-ENTRYPOINT [ "start-nginx.sh" ]
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder ./app/build /usr/share/nginx/html
