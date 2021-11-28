@@ -13,5 +13,6 @@ RUN npm install && npm run build
 FROM nginx:1.19-alpine AS server
 ENV JSFOLDER=/usr/share/nginx/html/static/js/*.js
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./start-nginx.sh /usr/bin/start-nginx.sh
 COPY --from=builder ./app/build /usr/share/nginx/html
 ENTRYPOINT [ "start-nginx.sh" ]
