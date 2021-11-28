@@ -1,7 +1,11 @@
-FROM node:14-alpine
+FROM node:14-alpine AS builder
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
-RUN npm i
-COPY . ./
-CMD ["npm", "start"]
+COPY yarn.lock ./
+RUN yarn install --frozen-lockfile
+COPY . .
+RUN npm run export
+
+FROM nginx:1.19-alpine AS server
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder ./app/out /usr/share/nginx/html
