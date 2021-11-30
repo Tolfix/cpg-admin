@@ -21,6 +21,9 @@ import { EditOrders } from './components/orders/Edit';
 import { EditTrans } from './components/transactions/Edit';
 import { ListCategory } from './components/categories/List';
 import { EditCategory } from './components/categories/Edit';
+import { configurable_options_List } from './components/configurable_options/List';
+import { Create_configurable_options } from './components/configurable_options/Create';
+import { Edit_configurable_options } from './components/configurable_options/Edit';
 
 function App() {
   return (
@@ -32,6 +35,7 @@ function App() {
           <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
           <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
           <Resource name="transactions" list={ListTransactions} create={CreateTransactions} edit={EditTrans} />
+          <Resource name="configurable_options" list={configurable_options_List} create={Create_configurable_options} edit={Edit_configurable_options} />
       </Admin>
     </>
   );
