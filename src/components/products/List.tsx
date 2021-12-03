@@ -2,7 +2,6 @@ import { List, Pagination, Datagrid, TextField, BooleanField, ReferenceField, Ed
 
 const PostPagination = (props: JSX.IntrinsicAttributes & PaginationProps) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
-
 export const ListProducts = (props: any) => (
     <List {...props} pagination={<PostPagination />}>
         <Datagrid>

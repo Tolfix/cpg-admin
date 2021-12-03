@@ -1,7 +1,9 @@
-import { List, Datagrid, TextField, EditButton } from 'react-admin';
+import { List, Datagrid, TextField, EditButton, Pagination } from 'react-admin';
+
+const PostPagination = (props: JSX.IntrinsicAttributes) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
 export const CustomerList = (props: any) => (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
         <Datagrid>
             <TextField label="Id" source="id" />
             <TextField label="First name" source="personal.first_name" />
