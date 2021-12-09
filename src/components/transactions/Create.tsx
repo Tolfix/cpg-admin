@@ -17,7 +17,7 @@ export const CreateTransactions = (props: any) =>
                         />
                 </ReferenceArrayInput>
                 <ReferenceArrayInput source="invoice_uid" reference="invoices">
-                    <SelectArrayInput optionText={(record) => record.id.toString()} />
+                    <SelectInput optionText={(record) => record.id.toString()} />
                 </ReferenceArrayInput>
                 <NumberInput required={true} label="Amount" source="amount" />
                 <NumberInput required={true} label="Fees" source="fees" />
