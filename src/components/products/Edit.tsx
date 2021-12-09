@@ -9,7 +9,7 @@ import {
     TextInput,
 } from "react-admin";
 //@ts-ignore
-import RichTextInput from 'ra-input-rich-text';
+import MarkdownInput from 'ra-input-markdown';
 
 export const EditProducts = (props: any) =>
 (
@@ -26,7 +26,7 @@ export const EditProducts = (props: any) =>
                     />
                 </ReferenceInput>
                 <TextInput required={true} label="Name" source="name" />
-                <RichTextInput required={true} label="Description" source="description" />
+                <MarkdownInput required={true} label="Description" source="description" />
                 <BooleanInput label="Hidden" defaultValue={false} source="hidden" />
                 <BooleanInput label="Special" defaultValue={false} source="special" />
             </FormTab>

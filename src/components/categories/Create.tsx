@@ -1,5 +1,6 @@
-import RichTextInput from "ra-input-rich-text";
-import { BooleanInput, Create, DateInput, FormTab, NumberInput, SelectInput, TabbedForm, TextInput } from "react-admin";
+//@ts-ignore
+import MarkdownInput from 'ra-input-markdown';
+import { BooleanInput, Create, FormTab, TabbedForm, TextInput } from "react-admin";
 
 export const CreateCategory = (props: any) =>
 (
@@ -7,7 +8,7 @@ export const CreateCategory = (props: any) =>
         <TabbedForm>
             <FormTab label="General">
                 <TextInput required={true} label="Name" source="name" />
-                <RichTextInput required={true} label="Description" source="description"  />
+                <MarkdownInput required={true} label="Description" source="description"  />
                 <BooleanInput defaultValue={false} label="Private" source="private" />
             </FormTab>
         </TabbedForm>

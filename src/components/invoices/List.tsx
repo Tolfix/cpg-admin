@@ -1,9 +1,16 @@
-import * as React from "react";
 import { PDFButton } from "./PDFButton";
-import { List, Datagrid, TextField, SingleFieldList, ChipField, BooleanField, ReferenceField, EditButton, ReferenceArrayField, FunctionField } from 'react-admin';
+import { List, Datagrid, 
+        TextField, SingleFieldList,
+        ChipField, BooleanField, ReferenceField,
+        EditButton, ReferenceArrayField, FunctionField,
+        Pagination
+} from 'react-admin';
+
+const PostPagination = (props: JSX.IntrinsicAttributes) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
 export const InvoicesList = (props: any) => (
-    <List {...props}>
+    // @ts-ignore
+    <List {...props} pagination={<PostPagination />}>
         <Datagrid>
             <TextField label="Id" source="id" />
             <ReferenceField label="Customer" source="customer_uid" reference="customers">

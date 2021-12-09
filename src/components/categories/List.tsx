@@ -1,9 +1,10 @@
-import RichTextInput from "ra-input-rich-text";
-import { BooleanField, BooleanInput, Create, Datagrid, DateInput, Edit, EditButton, FormTab, List, NumberInput, RichTextField, SelectInput, TabbedForm, TextField, TextInput } from "react-admin";
+import { BooleanField, Datagrid, EditButton, List, Pagination, RichTextField, TextField, } from "react-admin";
+
+const PostPagination = (props: JSX.IntrinsicAttributes) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
 export const ListCategory = (props: any) =>
 (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
         <Datagrid>
             <TextField label="Name" source="name" />
             <RichTextField label="Description" source="description"  />

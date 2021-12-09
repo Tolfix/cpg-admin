@@ -1,4 +1,4 @@
-import { Create, DateInput, FormTab, NumberInput, ReferenceArrayInput, SelectArrayInput, SelectInput, TabbedForm, TextInput } from "react-admin";
+import { Create, DateInput, FormTab, NumberInput, ReferenceArrayInput, SelectArrayInput, SelectInput, TabbedForm } from "react-admin";
 
 export const CreateTransactions = (props: any) =>
 (
@@ -21,7 +21,7 @@ export const CreateTransactions = (props: any) =>
                 </ReferenceArrayInput>
                 <NumberInput required={true} label="Amount" source="amount" />
                 <NumberInput required={true} label="Fees" source="fees" />
-                <DateInput label="Payed at" source="date" defaultValue={new Date()} />
+                <DateInput label="Payed at" source="date" defaultValue={new Date().toLocaleDateString()} />
                 <SelectInput required={true} source="payment_method" choices={[
                     { id: "none", name: "none" },
                     { id: "manual", name: "manual" },

@@ -1,12 +1,10 @@
 import { 
     ArrayInput,
-    BooleanInput,
-    Create, DateInput, Edit, FormTab,
+    Edit, FormTab,
     NumberInput,
     ReferenceArrayInput, ReferenceInput, SelectArrayInput, SelectInput,
     SimpleFormIterator,
     TabbedForm,
-    TextInput,
 } from "react-admin";
 
 export const EditOrders = (props: any) =>

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Show, SimpleShowLayout, TextField, DateField, RichTextField } from 'react-admin';
 
 export const ShowInvoices = (props: any) =>

@@ -1,8 +1,9 @@
-import * as React from "react";
-import { List, Datagrid, TextField, EditButton, ReferenceField, FunctionField, DateField, ReferenceArrayField, SingleFieldList, ChipField } from 'react-admin';
+import { List, Datagrid, TextField, EditButton, ReferenceField, FunctionField, DateField, ReferenceArrayField, SingleFieldList, ChipField, Pagination } from 'react-admin';
+
+const PostPagination = (props: JSX.IntrinsicAttributes) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
 export const OrderList = (props: any) => (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
         <Datagrid>
             <TextField label="Id" source="id" />
             <ReferenceField label="Customer" source="customer_uid" reference="customers">
@@ -22,13 +23,6 @@ export const OrderList = (props: any) => (
                     <ChipField source="product_id" />
                 </SingleFieldList>
             </ReferenceArrayField>
-            {/* <ReferenceField label="Product" source="product_uid" reference="products">
-                <FunctionField 
-                    // @ts-ignore
-                    render={(record) => 
-                    `${record.name}`} 
-                />
-            </ReferenceField> */}
             <TextField label="Method" source="payment_method" />
             <TextField label="Status" source="order_status" />
             <TextField label="Billing Type" source="billing_type" />

@@ -1,7 +1,10 @@
-import { List, Datagrid, TextField, SingleFieldList, ChipField, BooleanField, ReferenceField, EditButton, FunctionField, ReferenceArrayField } from 'react-admin';
+import { List, Datagrid, TextField, SingleFieldList, ChipField, ReferenceField, EditButton, FunctionField, ReferenceArrayField, Pagination, PaginationProps } from 'react-admin';
+
+const PostPagination = (props: JSX.IntrinsicAttributes & PaginationProps) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
+
 
 export const ListTransactions = (props: any) => (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
         <Datagrid>
             <TextField label="Id" source="id" />
             <TextField label="uid" source="uid" />

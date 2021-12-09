@@ -1,4 +1,4 @@
-import { Admin, ListGuesser, Resource } from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import Dashboard from "./components/Dashboard";
 import authProvider from "./components/authProvider";
 import dataProvider from './components/dataProvider';
@@ -21,20 +21,22 @@ import { EditOrders } from './components/orders/Edit';
 import { EditTrans } from './components/transactions/Edit';
 import { ListCategory } from './components/categories/List';
 import { EditCategory } from './components/categories/Edit';
+import { configurable_options_List } from './components/configurable_options/List';
+import { Create_configurable_options } from './components/configurable_options/Create';
+import { Edit_configurable_options } from './components/configurable_options/Edit';
 
 function App() {
   return (
     <>
-    
-    <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
-        <Resource name="categories" list={ListCategory} create={CreateCategory} edit={EditCategory} />
-        <Resource name="customers" list={CustomerList} create={CreateCustomer} edit={EditCustomer} />
-        <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
-        <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
-        <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
-        <Resource name="transactions" list={ListTransactions} create={CreateTransactions} edit={EditTrans} />
-    </Admin>
-    
+      <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
+          <Resource name="categories" list={ListCategory} create={CreateCategory} edit={EditCategory} />
+          <Resource name="customers" list={CustomerList} create={CreateCustomer} edit={EditCustomer} />
+          <Resource name="invoices" list={InvoicesList} show={ShowInvoices} create={CreateInvoices} edit={EditInvoices} />
+          <Resource name="products" list={ListProducts} create={CreateProducts} edit={EditProducts} />
+          <Resource name="orders" list={OrderList} create={CreateOrders} edit={EditOrders} />
+          <Resource name="transactions" list={ListTransactions} create={CreateTransactions} edit={EditTrans} />
+          <Resource name="configurable_options" list={configurable_options_List} create={Create_configurable_options} edit={Edit_configurable_options} />
+      </Admin>
     </>
   );
 }

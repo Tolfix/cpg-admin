@@ -1,8 +1,6 @@
-import * as React from "react";
-import { List, Pagination, Datagrid, TextField, BooleanField, ReferenceField, EditButton, NumberField } from 'react-admin';
+import { List, Pagination, Datagrid, TextField, BooleanField, ReferenceField, EditButton, NumberField, PaginationProps } from 'react-admin';
 
-const PostPagination = props => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
-
+const PostPagination = (props: JSX.IntrinsicAttributes & PaginationProps) => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
 export const ListProducts = (props: any) => (
     <List {...props} pagination={<PostPagination />}>

@@ -8,7 +8,7 @@ import {
     TabbedForm,
 } from "react-admin";
 //@ts-ignore
-import RichTextInput from 'ra-input-rich-text';
+import MarkdownInput from 'ra-input-markdown';
 
 export const CreateInvoices = (props: any) =>
 (
@@ -33,8 +33,6 @@ export const CreateInvoices = (props: any) =>
                     { id: "payment_pending", name: "payment_pending" },
                     { id: "active", name: "active" },
                     { id: "pending", name: "pending" },
-                    { id: "fruad", name: "fruad" },
-                    { id: "cancelled", name: "cancelled" },
                 ]} />
                 <SelectInput required={true} source="payment_method" choices={[
                     { id: "none", name: "none" },
@@ -55,11 +53,11 @@ export const CreateInvoices = (props: any) =>
             </FormTab>
             <FormTab label="Miscellaneous">
                 
-                <RichTextInput source="notes" />
+                <MarkdownInput source="notes" />
 
                 <ArrayInput required={true} source="items">
                     <SimpleFormIterator>
-                        <RichTextInput source="notes" />
+                        <MarkdownInput source="notes" />
                         <NumberInput required={true} label="Amount" source="amount" />
                         <NumberInput label="Quantity" defaultValue={1} source="quantity" />
                         <ReferenceArrayInput source="product_id" reference="products">
